@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.sidenav {
+  position: absolute;
+  top: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Crna boja sa prozirnošću */
+  backdrop-filter: blur(10px); /* Blag blur efekat */
+  padding: 10px 0;
+  border-radius: 10px;
+}
+
+.sidenav a {
+  color: white; /* Bele boje slova */
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 15px;
+}
+
+.sidenav a:hover {
+  text-decoration: underline; /* Podvlači linkove na hover */
+}
