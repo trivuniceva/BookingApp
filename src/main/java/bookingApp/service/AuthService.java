@@ -13,9 +13,31 @@ public class AuthService {
 
 
     public User login(String email, String password) {
-        return userRepository.findByEmail(email)
-                .filter(user -> user.getPassword().equals(password))
-                .orElseThrow(() -> new RuntimeException("Invalid credentials"));
+        System.out.println("email: " + email);
+        System.out.println("password: " + password);
+
+        if (userExist(email)){
+            User user = userRepository.findByEmail(email);
+            if(validPassword(user, password)){
+                System.out.println("dobat juzerrr ej");
+                return user;
+            }
+        }
+        return null;
+    }
+
+    boolean userExist(String email){
+        if(userRepository.findByEmail(email) != null){
+            return true;
+        }
+        return false;
+    }
+
+    boolean validPassword(User user, String password){
+        if(user.getPassword().equals(password)){
+            return true;
+        }
+        return false;
     }
 }
 

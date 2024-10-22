@@ -20,6 +20,7 @@ public class AuthController {
     @PostMapping("/api/auth/login")
     public ResponseEntity<User> login(@RequestBody User loginUser) {
         System.out.println(" srce moje lepooo!!! ");
+
         User user = authService.login(loginUser.getEmail(), loginUser.getPassword());
         return ResponseEntity.ok(user);
     }
