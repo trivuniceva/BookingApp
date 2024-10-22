@@ -7,6 +7,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: start;
+  position: relative;
 }
 
 .sidenav {
@@ -15,19 +16,21 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Crna boja sa prozirnošću */
-  backdrop-filter: blur(10px); /* Blag blur efekat */
+  background-color: rgba(30, 30, 30, 0.1);
+  backdrop-filter: blur(10px);
   padding: 10px 0;
   border-radius: 10px;
+  z-index: 1;
 }
 
 .sidenav a {
-  color: white; /* Bele boje slova */
+  color: white;
   text-decoration: none;
   font-size: 18px;
   margin: 0 15px;
 }
 
 .sidenav a:hover {
-  text-decoration: underline; /* Podvlači linkove na hover */
+  text-decoration: none;
+  color: #3b5998;
 }
