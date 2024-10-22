@@ -1,6 +1,19 @@
-<div class="sidenav">
+<div *ngIf="!userRole || userRole === ''" class="sidenav">
   <a routerLink="">Home</a>
   <a routerLink="">About</a>
   <a routerLink="">Search</a>
   <a routerLink="/login">Login</a>
+</div>
+
+
+<div *ngIf="userRole === 'GUEST'" class="sidenav">
+  <a routerLink="/profile">Profile</a>
+  <a routerLink="/profile">Reservation</a>
+</div>
+
+<div *ngIf="userRole === 'HOST'" class="sidenav">
+  <a routerLink="/profile">Profile</a>
+  <a routerLink="/profile">Add Apartment</a>
+  <a routerLink="/profile">Edit Apartment</a>
+  <a routerLink="/profile">Reservation</a>
 </div>

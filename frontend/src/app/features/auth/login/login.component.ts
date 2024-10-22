@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
-import {AuthService} from '../../core/service/auth/auth.service';
+import {AuthService} from '../../../core/service/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +18,7 @@ export class LoginComponent {
     this.authService.login(this.email, this.password).subscribe(response => {
       console.log('Login successful', response);
       localStorage.setItem('user', JSON.stringify(response)); // Čuvaj korisnika
+      this.router.navigate(['/profile'])
     }, error => {
       console.error('Login failed', error);
     });

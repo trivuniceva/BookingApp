@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './features/login/login.component';
+import { LoginComponent } from './features/auth/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
-import { SignupComponent } from './features/signup/signup.component';
+import { SignupComponent } from './features/auth/signup/signup.component';
 import {AuthService} from './core/service/auth/auth.service';
 import {NavbarComponent} from './shared/navbar/navbar.component';
+import { UserProfileComponent } from './features/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {NavbarComponent} from './shared/navbar/navbar.component';
     LoginComponent,
     SignupComponent,
     NavbarComponent,
+    UserProfileComponent,
 
 
   ],
