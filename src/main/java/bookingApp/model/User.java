@@ -26,6 +26,10 @@ public class User {
     @Column(name = "user_role")
     private UserRole userRole;
 
+    @Column(name = "profile_pic")
+    private String profilePic;
+
+
     public Long getId() {
         return id;
     }
@@ -72,6 +76,14 @@ public class User {
 
     public void setUserRole(UserRole userRole) {
         this.userRole = userRole;
+    }
+
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
     }
 }
 
