@@ -4,16 +4,18 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './features/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
-import {AuthService} from './service/auth/auth.service';
-import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from './features/signup/signup.component';
+import {AuthService} from './core/service/auth/auth.service';
+import {NavbarComponent} from './shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
+    NavbarComponent,
 
 
   ],
@@ -24,7 +26,14 @@ import { SignupComponent } from './signup/signup.component';
     HttpClientModule,
 
   ],
-  providers: [AuthService,],
-  bootstrap: [AppComponent]
+  providers: [
+    AuthService,
+  ],
+  bootstrap: [AppComponent],
+  // exports: [
+  //   NavbarComponent,
+  //
+  // ],
+
 })
 export class AppModule { }
