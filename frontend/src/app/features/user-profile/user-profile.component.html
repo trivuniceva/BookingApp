@@ -1,8 +1,7 @@
 <div *ngIf="user" class="profile-container">
 
-  <div  class="image-container">
-<!--    <img [src]="user.profilePic" alt="Profilna slika" class="profile-image" />-->
-    <img class="profile-image" src="assets/pics/slika.jpg">
+  <div class="image-container">
+    <img [src]="user.profilePic" alt="Profilna slika" class="profile-image" />
   </div>
 
   <div class="form-group">
@@ -20,18 +19,19 @@
     <input id="email" [(ngModel)]="user.email" readonly type="email" />
   </div>
 
-<!--  <div class="form-group">-->
-<!--    <label for="profilePicture">Add new profile picture:</label>-->
-<!--    <input type="file" id="profilePicture" (change)="onFileSelected($event)" [disabled]="!isEditing" />-->
-<!--  </div>-->
+  <div class="form-group">
+    <label for="profilePicture">Add new profile picture:</label>
+    <input type="file" id="profilePicture" (change)="onFileSelected($event)" [disabled]="!isEditing" />
+  </div>
 
-<!--  <button *ngIf="!isEditing" (click)="enableEditing()">Edit</button>-->
-<!---->
-<!--  <button *ngIf="isEditing" (click)="saveChanges()">Save</button>-->
-<!---->
-<!--  <button *ngIf="isEditing" (click)="cancelEditing()">Cancel</button>-->
+  <div class="button-container">
+    <button *ngIf="!isEditing" (click)="enableEditing()">Edit</button>
+    <button *ngIf="isEditing" (click)="saveChanges()">Save</button>
+    <button *ngIf="isEditing" (click)="cancelEditing()">Cancel</button>
+  </div>
+
 </div>
 
-<!--<div *ngIf="!user" class="profile-container">-->
-<!--  <p>Nemate prijavljene korisnike.</p>-->
-<!--</div>-->
+<div *ngIf="!user" class="profile-container">
+  <p>Nemate prijavljene korisnike.</p>
+</div>

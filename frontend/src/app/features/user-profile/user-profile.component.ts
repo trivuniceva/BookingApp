@@ -16,4 +16,19 @@ export class UserProfileComponent {
     console.log("ovog usera gledas info " + this.user);
   }
 
+  enableEditing() {
+
+  }
+
+  saveChanges() {
+
+  }
+
+  cancelEditing() {
+
+  }
+
+  onFileSelected($event: Event) {
+
+  }
 }
