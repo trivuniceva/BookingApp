@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -23,6 +24,12 @@ public class AuthController {
 
         User user = authService.login(loginUser.getEmail(), loginUser.getPassword());
         return ResponseEntity.ok(user);
+    }
+
+    @PostMapping("/logout")
+    public String logout(@RequestParam String sessionId) {
+        // TODO: napravi user session
+        return "Logout successful!";
     }
 }
 
