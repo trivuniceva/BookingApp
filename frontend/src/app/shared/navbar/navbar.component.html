@@ -9,6 +9,7 @@
 <div *ngIf="userRole === 'GUEST'" class="sidenav">
   <a routerLink="/profile">Profile</a>
   <a routerLink="/profile">Reservation</a>
+  <a href="#" (click)="logout()">Logout</a>
 </div>
 
 <div *ngIf="userRole === 'HOST'" class="sidenav">
@@ -16,4 +17,5 @@
   <a routerLink="/profile">Add Apartment</a>
   <a routerLink="/profile">Edit Apartment</a>
   <a routerLink="/profile">Reservation</a>
+  <a href="#" (click)="logout()">Logout</a>
 </div>

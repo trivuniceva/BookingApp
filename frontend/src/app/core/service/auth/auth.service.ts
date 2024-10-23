@@ -41,6 +41,29 @@ export class AuthService {
     );
   }
 
+  logout() {
+    const currentUser = JSON.parse(localStorage.getItem('user') || '{}');
+    const sessionId = currentUser.sessionId;
+
+    console.log("juzeriii", currentUser);
+
+    if (!sessionId) {
+      console.error('No session ID found');
+      return;
+    }
+
+    this.http.post('/api/logout', { sessionId }).subscribe(
+      response => {
+        console.log('Logout successful:', response);
+
+        localStorage.removeItem('user');
+        this.userRoleSubject.next('');
+      },
+      error => {
+        console.error('Logout failed:', error);
+      }
+    );
+
   getCurrentUser() {
     let user = localStorage.getItem('user');
     if (user) {
