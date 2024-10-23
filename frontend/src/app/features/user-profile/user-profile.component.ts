@@ -17,7 +17,7 @@ export class UserProfileComponent {
   }
 
   enableEditing() {
-
+    this.isEditing = true;
   }
 
   saveChanges() {
