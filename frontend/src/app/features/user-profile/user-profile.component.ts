@@ -25,7 +25,7 @@ export class UserProfileComponent {
   }
 
   cancelEditing() {
-
+    this.isEditing = false;
   }
 
   onFileSelected($event: Event) {
