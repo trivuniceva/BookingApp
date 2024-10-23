@@ -24,12 +24,7 @@ export class AuthService {
 
       this.userRoleSubject.next(parsedUser.userRole);
     }
-
-
-    // this.userRoleSubject.next()
-
     console.log("uso u log")
-
 
     return this.http.post(this.apiUrl, { email, password });
   }
@@ -69,5 +64,13 @@ export class AuthService {
       }
     );
 
+  getCurrentUser() {
+    let user = localStorage.getItem('user');
+    if (user) {
+      console.log("rola: ")
+      let parsedUser = JSON.parse(user);
+      // return this.userRoleSubject.getValue();
+      return parsedUser;
+    }
   }
 }

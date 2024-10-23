@@ -20,6 +20,7 @@ public class AuthService {
             User user = userRepository.findByEmail(email);
             if(validPassword(user, password)){
                 System.out.println("dobat juzerrr ej");
+                System.out.println(user.getProfilePic());
                 return user;
             }
         }
