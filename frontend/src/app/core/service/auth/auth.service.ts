@@ -52,7 +52,7 @@ export class AuthService {
       return;
     }
 
-    this.http.post('/api/logout', { sessionId }).subscribe(
+    this.http.post('/api/logout', {sessionId}).subscribe(
       response => {
         console.log('Logout successful:', response);
 
@@ -64,6 +64,7 @@ export class AuthService {
       }
     );
 
+  }
   getCurrentUser() {
     let user = localStorage.getItem('user');
     if (user) {
